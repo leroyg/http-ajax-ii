@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, NavLink } from "react-router-dom"
+import { Route, NavLink, Link } from "react-router-dom"
 import Description from "./TrinketDescription"
 import Shipping from "./TrinketShipping"
 
@@ -26,6 +26,7 @@ export default function(props) {
 			<nav className="trinket-nav">
 				<NavLink to={props.match.url} exact>Description</NavLink>
 				<NavLink to={`${props.match.url}/shipping`} exact>Shipping</NavLink>
+                <Link to={`/edit/${item.id}`}>Edit</Link>
 			</nav>
 
 			<Route path={props.match.path} exact render={() => <Description description={item.description} />} />
